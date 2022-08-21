@@ -1,7 +1,9 @@
 document.getElementById('depositeButton').addEventListener('click', function(){
     const depositeTransation =  document.getElementById('depositeTransation');
     const depositeTransationValueStr = depositeTransation.value;
+    console.log(isNaN(depositeTransationValueStr));
     const depositeTransationValue = parseFloat(depositeTransationValueStr);
+    console.log(isNaN(depositeTransationValue));
     
     if(isNaN(depositeTransationValue)){
         document.getElementById('alert').style.display = 'block'
@@ -58,16 +60,16 @@ document.getElementById('withdrawButton').addEventListener('click', function(){
         const currentBlanceValueStr = currentBlance.innerText;
         const currentBlanceValue = parseFloat(currentBlanceValueStr);
         const newBlance = currentBlanceValue - withdrawTransationValue;
-        if (newBlance >= 00) {
-            withdrawBlance.innerText = newWithdraw;
-            currentBlance.innerText = newBlance;
-        }
-        else{
+        if (withdrawTransationValue > currentBlanceValue) {
             document.getElementById('alert2').style.display = 'block'
             document.getElementById('depositeButton').disabled = true;
             document.getElementById('withdrawButton').disabled = true;
             document.getElementById('depositeButton').style.backgroundColor = '#4a4e59';
             document.getElementById('withdrawButton').style.backgroundColor = '#4a4e59';
+        }
+        else{
+            withdrawBlance.innerText = newWithdraw;
+            currentBlance.innerText = newBlance;
         }
         // currentBlance.innerText = newBlance;        // console.log(newDeposite);
 
