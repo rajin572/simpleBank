@@ -5,6 +5,10 @@ document.getElementById('depositeButton').addEventListener('click', function(){
     
     if(isNaN(depositeTransationValue)){
         document.getElementById('alert').style.display = 'block'
+        document.getElementById('depositeButton').disabled = true;
+        document.getElementById('withdrawButton').disabled = true;
+        document.getElementById('depositeButton').style.backgroundColor = '#4a4e59';
+        document.getElementById('withdrawButton').style.backgroundColor = '#4a4e59';
     }
     else{
         const depositeBlance = document.getElementById('deposite-blance');
@@ -37,6 +41,10 @@ document.getElementById('withdrawButton').addEventListener('click', function(){
     
     if(isNaN(withdrawTransationValue)){
         document.getElementById('alert').style.display = 'block'
+        document.getElementById('depositeButton').disabled = true;
+        document.getElementById('withdrawButton').disabled = true;
+        document.getElementById('depositeButton').style.backgroundColor = '#4a4e59';
+        document.getElementById('withdrawButton').style.backgroundColor = '#4a4e59';
     }
     else{
         const withdrawBlance = document.getElementById('withdraw-blance');
@@ -56,6 +64,10 @@ document.getElementById('withdrawButton').addEventListener('click', function(){
         }
         else{
             document.getElementById('alert2').style.display = 'block'
+            document.getElementById('depositeButton').disabled = true;
+            document.getElementById('withdrawButton').disabled = true;
+            document.getElementById('depositeButton').style.backgroundColor = '#4a4e59';
+            document.getElementById('withdrawButton').style.backgroundColor = '#4a4e59';
         }
         // currentBlance.innerText = newBlance;        // console.log(newDeposite);
 
@@ -67,9 +79,17 @@ document.getElementById('withdrawButton').addEventListener('click', function(){
 
 document.getElementById('alert-off').addEventListener('click', function(){
     document.getElementById('alert').style.display = 'none'
+    document.getElementById('depositeButton').disabled = false;
+    document.getElementById('withdrawButton').disabled = false;
+    document.getElementById('depositeButton').style.backgroundColor = '#0e49fb';
+    document.getElementById('withdrawButton').style.backgroundColor = '#0e49fb';
 })
 document.getElementById('alert-off2').addEventListener('click', function(){
     document.getElementById('alert2').style.display = 'none'
+    document.getElementById('depositeButton').disabled = false;
+    document.getElementById('withdrawButton').disabled = false;
+    document.getElementById('depositeButton').style.backgroundColor = '#0e49fb';
+    document.getElementById('withdrawButton').style.backgroundColor = '#0e49fb';
 })
 
 document.getElementById('logout').addEventListener('click', function(){
